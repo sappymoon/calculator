@@ -13,7 +13,7 @@
         
         <div class="row1">
             <button class="clear" onclick="clearDisplay()">Clear</button>
-            <button class="backspace">←</button>
+            <button class="backspace" onclick="deleteNumber()">←</button>
         </div>
 
         <div class="row2">
@@ -38,7 +38,7 @@
         </div>
 
         <div class="row4">
-            <button class="decimal" id="operator" value=".">.</button>
+            <button class="decimal" id="decimal" value="." onclick="getNumber(this.value)">.</button>
             <button class="zero" id="number" value="0" onclick="getNumber(this.value)">0</button>
             <button class="equal" id="operator" value="=" onclick="operate()">=</button>
             <button class="add" id="operator" value="+" onclick="getOperator(this.value)">+</button>

@@ -47,6 +47,20 @@ html{
     border: 3px solid black;
 }
 
+#decimal{
+    width: 10vh;
+    height: 10vh;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: rgb(255, 153, 0);
+    font-size: large;
+    font-weight: bold;
+}
+
+#decimal:active{
+    border: 3px solid black;
+}
+
 .display{
     border: 1px solid black;
     border-radius: 8px;
