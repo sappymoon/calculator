@@ -4,19 +4,23 @@ let operator = '';
 let temp = 0;
 let answer = '';
 let lockOperator = 0;
+let displayCounter = 0;
+let displayCounter2 = 0;
 
 function getNumber(value){
-    if(temp == 0){
+    if(temp == 0 && displayCounter < 16){
         num1 += value;
-        document.getElementById('display').innerHTML = num1 + " " + operator + " " + num2;
+        document.getElementById('display').innerHTML = num1 + " " + operator;
+        displayCounter++;
 
         if(value == '.'){
             document.getElementById('decimal').value = '';
         }
     }
-    else if(temp == 1){
+    else if(temp == 1 && displayCounter2 < 16){
         num2 += value;
-        document.getElementById('display').innerHTML = num1 + " " + operator + " " + num2;
+        document.getElementById('display').innerHTML = num2;
+        displayCounter2++;
 
         if(value == '.'){
             document.getElementById('decimal').value = '';
@@ -46,6 +50,7 @@ function operate(){
             lockOperator = 0;
             num1 = answer;
             document.getElementById('decimal').value = '.';
+            displayCounter2 = 0;
         }
     }
     else if(operator == '*'){
@@ -54,6 +59,7 @@ function operate(){
         lockOperator = 0;
         num1 = answer;
         document.getElementById('decimal').value = '.';
+        displayCounter2 = 0;
     }
     else if(operator == '-'){
         answer = num1 - num2;
@@ -61,6 +67,7 @@ function operate(){
         lockOperator = 0;
         num1 = answer;
         document.getElementById('decimal').value = '.';
+        displayCounter2 = 0;
     }
     else if(operator == '+'){
         num1 = Number(num1);
@@ -70,6 +77,7 @@ function operate(){
         lockOperator = 0;
         num1 = answer;
         document.getElementById('decimal').value = '.';
+        displayCounter2 = 0;
     }
 }
 
@@ -80,6 +88,8 @@ function clearDisplay(){
     temp = 0;
     answer = '';
     lockOperator = 0;
+    displayCounter = 0;
+    displayCounter2 = 0;
 
     document.getElementById('display').innerHTML = '';
 }
@@ -87,12 +97,10 @@ function clearDisplay(){
 function deleteNumber(){
     if(temp == 0){
         num1 = num1.substring(0, num1.length - 1);
-        console.log(num1);
         document.getElementById('display').innerHTML = num1 + " " + operator + " " + num2;
     }
     else if(temp == 1){
         num2 = num2.substring(0, num2.length - 1);
-        console.log(num2);
         document.getElementById('display').innerHTML = num1 + " " + operator + " " + num2;
     }
 }
