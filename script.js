@@ -78,6 +78,8 @@ function clearDisplay(){
     num2 = '';
     operator = '';
     temp = 0;
+    answer = '';
+    lockOperator = 0;
 
     document.getElementById('display').innerHTML = '';
 }
