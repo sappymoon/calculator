@@ -46,7 +46,7 @@ function operate(){
         }
         else{
             answer = num1 / num2;
-            document.getElementById('display').innerHTML = answer.toFixed(3) * 1;
+            document.getElementById('display').innerHTML = answer.toFixed(8) * 1;
             lockOperator = 0;
             num1 = answer;
             document.getElementById('decimal').value = '.';
@@ -55,7 +55,7 @@ function operate(){
     }
     else if(operator == '*'){
         answer = num1 * num2;
-        document.getElementById('display').innerHTML = answer.toFixed(3) * 1;
+        document.getElementById('display').innerHTML = answer.toFixed(8) * 1;
         lockOperator = 0;
         num1 = answer;
         document.getElementById('decimal').value = '.';
@@ -63,7 +63,7 @@ function operate(){
     }
     else if(operator == '-'){
         answer = num1 - num2;
-        document.getElementById('display').innerHTML = answer.toFixed(3) * 1;
+        document.getElementById('display').innerHTML = answer.toFixed(8) * 1;
         lockOperator = 0;
         num1 = answer;
         document.getElementById('decimal').value = '.';
@@ -73,7 +73,7 @@ function operate(){
         num1 = Number(num1);
         num2 = Number(num2);
         answer = num1 + num2;
-        document.getElementById('display').innerHTML = answer.toFixed(3) * 1;
+        document.getElementById('display').innerHTML = answer.toFixed(8) * 1;
         lockOperator = 0;
         num1 = answer;
         document.getElementById('decimal').value = '.';
